@@ -1,0 +1,92 @@
+\def\mytitle{PROBABILITY}
+\def\myauthor{Divya Sai}
+\def\contact{nanneboinadivyasai@gmail.com}
+\def\mymodule{Future Wireless Communication (FWC)}
+\documentclass[10pt, a4paper]{article}
+\usepackage[a4paper,outer=1.5cm,inner=1.5cm,top=1.75cm,bottom=1.5cm]{geometry}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage[colorlinks,linkcolor={black},citecolor={blue!80!black},urlcolor={blue!80!black}]{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{tensor}
+\usepackage{amsmath}
+\newcommand\Perms[2]{\tensor[^{#2}]P{_{#1}}}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{watermark}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{titlesec}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\titlespacing{\subsection}{1pt}{\parskip}{3pt}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\paragraph}{0pt}{\parskip}{\parskip}
+\newcommand{\figuremacro}[5]{
+    \begin{figure}[#1]
+        \centering
+   
+        \includegraphics[width=#5\columnwidth]{#2}
+        \caption[#3]{\textbf{#3}#4}
+        \label{fig:#2}
+    \end{figure}
+}
+\let\vec\mathbf
+\lstset{
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\title{\mytitle}
+\author{\myauthor\hspace{1em} \\\contact\\FWC22094\hspace{6.5em}IITH\hspace{0.5em}\mymodule\hspace{6em}Module 2}
+\date{}
+\begin{document}
+\maketitle
+\paragraph*{\large Q-12,13.4,9}
+\paragraph*{\large The random variable X has a probability distribution P(X) of the following form.where k is some number: }
+\hspace{15mm}\\
+a) $P(A|B) = \dfrac{P(B)}{P(A)}\hspace{20mm}$ b)$P(A|B) < P(A)$
+\\
+\\
+c)$P(A|B) \geqq P(A)$ \hspace{21mm} d)None of these\\
+\\
+\noindent \textbf{Given:} A $\subset$ B and P(B) $\neq$ 0\\
+\textbf{solution}\\
+if A $\subset$ B and P(B)$\neq$ 0 then \\
+\begin{center}
+$\Rightarrow$ A $\cap$ B =A\\
+also P(A) $<$ P(B)\\\vspace{2mm}
+\end{center}
+\begin{equation}
+P(A|B) = \dfrac{P(A \cap B)}{P(B)}=\dfrac{P(A)}{P(B)}\\
+\end{equation}
+we know that \\
+\begin{center}
+1 $\leq$ $\dfrac{1}{P(B)}$
+\end{center}
+multiply both sides with P(A),we get
+\begin{center}
+P(A) $\leq$ $\dfrac{P(A)}{P(B)}$
+\end{center}
+from the above eq 10
+\begin{center}
+P(A) $\leq$ P(A$\mid$B)
+\end{center}
+\begin{equation}
+\boxed{ P(A \mid B)\geq P(A)}
+\end{equation}
+\end{document}

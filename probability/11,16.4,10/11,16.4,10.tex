@@ -1,0 +1,87 @@
+\def\mytitle{PROBABILITY}
+\def\myauthor{Divya Sai}
+\def\contact{nanneboinadivyasai@gmail.com}
+\def\mymodule{Future Wireless Communication (FWC)}
+\documentclass[10pt, a4paper]{article}
+\usepackage[a4paper,outer=1.5cm,inner=1.5cm,top=1.75cm,bottom=1.5cm]{geometry}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage[colorlinks,linkcolor={black},citecolor={blue!80!black},urlcolor={blue!80!black}]{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{tensor}
+\usepackage{amsmath}
+\newcommand\Perms[2]{\tensor[^{#2}]P{_{#1}}}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{watermark}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{titlesec}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\titlespacing{\subsection}{1pt}{\parskip}{3pt}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\paragraph}{0pt}{\parskip}{\parskip}
+\newcommand{\figuremacro}[5]{
+    \begin{figure}[#1]
+        \centering
+   
+        \includegraphics[width=#5\columnwidth]{#2}
+        \caption[#3]{\textbf{#3}#4}
+        \label{fig:#2}
+    \end{figure}
+}
+\let\vec\mathbf
+\lstset{
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\title{\mytitle}
+\author{\myauthor\hspace{1em} \\\contact\\FWC22094\hspace{6.5em}IITH\hspace{0.5em}\mymodule\hspace{6em}Module 2}
+\date{}
+\begin{document}
+\maketitle
+\paragraph*{\large Q-11,16.4,10}
+\paragraph*{\large The number lock of a suitcase has 4 wheels each labelled with ten digits i.e. from 0 to 9.The lock opens with a sequence of four digits with no repeats.What is the probability of a person getting the right sequence to open the suitcase?}
+\hspace{160mm}\\
+\textbf{Solution:}\\
+Let,the numbers be $X =\lbrace{0,1,2,3}\rbrace$ and the digits be $Y=\lbrace{0,1,2...9}\rbrace$\\
+There are 10 digits out of which 4 digits are to be chosen with no repeats\\
+possible placement of digits are,
+\begin{equation}
+^nP_r=\frac{n!}{(n-r)!}
+\end{equation}
+\\n=10 ,r= 4
+\begin{equation}
+^{10}P_4=\frac{10!}{(10-4)!}=\frac{10!}{6!}=\frac{10 \times 9 \times 8 \times 7 \times	 6!}{6!}=5040
+\end{equation}
+But since, the lock can open with only one correct sequence out of the all 4 digit numbers.
+\\Let A be the event the correct sequence is selected So,n(A)=1
+\\Probability of correct sequence is selected,P(A)
+\\
+\begin{align}
+=\frac{\text{No of Possible outcomes}}{\text{Total number of outcomes}}
+\end{align}\\
+\begin{equation}
+P(A)=\frac{n(A)}{n(s)}=\frac{1}{5040}
+\end{equation}
+Therefore, the probability of getting the right sequence to open the suitcase is 
+\begin{equation}
+\boxed{\frac{1}{5040}}
+\end{equation}
+\end{document}
