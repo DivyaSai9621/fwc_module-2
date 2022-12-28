@@ -1,0 +1,163 @@
+\def\mytitle{PROBABILITY}
+\def\myauthor{Divya Sai}
+\def\contact{nanneboinadivyasai@gmail.com}
+\def\mymodule{Future Wireless Communication (FWC)}
+\documentclass[10pt, a4paper]{article}
+\usepackage[a4paper,outer=1.5cm,inner=1.5cm,top=1.75cm,bottom=1.5cm]{geometry}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage[colorlinks,linkcolor={black},citecolor={blue!80!black},urlcolor={blue!80!black}]{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{tensor}
+\usepackage{amsmath}
+\newcommand\Perms[2]{\tensor[^{#2}]P{_{#1}}}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{watermark}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{titlesec}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\titlespacing{\subsection}{1pt}{\parskip}{3pt}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\paragraph}{0pt}{\parskip}{\parskip}
+\newcommand{\figuremacro}[5]{
+    \begin{figure}[#1]
+        \centering
+   
+        \includegraphics[width=#5\columnwidth]{#2}
+        \caption[#3]{\textbf{#3}#4}
+        \label{fig:#2}
+    \end{figure}
+}
+\let\vec\mathbf
+\lstset{
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\title{\mytitle}
+\author{\myauthor\hspace{1em} \\\contact\\FWC22094\hspace{6.5em}IITH\hspace{0.5em}\mymodule\hspace{6em}Module 2}
+\date{}
+\begin{document}
+\maketitle
+\paragraph*{\large Q-12,13.4,9}
+\paragraph*{\large The random variable X has a probability distribution P(X) of the following form.where k is some number: }
+\begin{equation}
+  P(X) =
+    \begin{cases}
+      k,  & \text{if x=0}\\
+      2k, & \text{if x=1}\\
+      3k, & \text{if x=2}\\
+      0 , & \text{otherwise}
+    \end{cases}       
+\end{equation}
+
+\hspace{15mm}\\
+a) Determine the value of k
+\\
+b) Find P(X $<$ 2),P(X $\leq$ 2),P(X $\geq$ 2)
+\\
+\\
+\textbf{Solution}\\
+If we expand the probabilities given further more
+by substituting the value of x and only considering
+0 to 4 hours as the probability of studying in the
+remaining hours is zero, we get\\
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    x &  0 & 1 & 2 \\
+    \hline
+    $\Pr\brak{X=x}$ & k & 2k & 3k\\
+    \hline  
+\end{tabular}
+\end{center}
+
+we also know that,
+\begin{align}
+    \sum_{k = 0}^2 \Pr\brak{X = k} = 1 \label{eq 2.0.1}
+\end{align}
+
+By substituting the probabilities in \eqref{eq 2.0.1}
+\begin{align}
+& \implies k + 2k + 3k  = 1 \\
+& \implies 6k = 1 
+\end{align}
+\begin{align}
+    k = 0.167
+\end{align}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    x &  0 & 1 & 2\\
+    \hline
+    $\Pr\brak{X=x}$ & 0.167 & 0.334 & 0.501\\
+    \hline
+\end{tabular} 
+\end{center}
+We know that, Cumulative Distributive Function (CDF) 
+\begin{align}
+    F(x) = \Pr\brak{X \le x}
+\end{align}
+\begin{table}[ht]
+  
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    x &  0 & 1 & 2\\
+    \hline
+    $F(X)$ & 0.167 & 0.501 & 1.00 \\
+    \hline
+\end{tabular} 
+\end{table}
+\\And also, 
+\begin{align}
+     \Pr\brak{x < X \le y} = F\brak{y} - F\brak{x} 
+\end{align}
+ \begin{enumerate}
+        \item P(X $<$ 2)
+           \begin{align}
+            & \implies \sum_{k = 0}^1 \Pr\brak{X = k} = \Pr\brak{X \ge 2}\\
+            & \implies \Pr\brak{0 < X \le 1} 
+        \end{align}
+        \begin{align}
+            & = F(1)\\
+            & = 0.501
+        \end{align}
+        \item P(X $\leq$ 2)
+        \begin{align}
+         & \implies \sum_{k = 0}^2  \Pr\brak{X = k} = \Pr \brak{X \le 2}
+         \end{align}
+        \begin{align}
+            & = F(2)\\
+            & = 1   
+        \end{align}
+        
+        \item P(X $\geq$ 2)
+        \begin{align}
+            & \implies \Pr\brak{1 < X \le 2} 
+        \end{align}
+        \begin{align}
+            & = F(2) - F(1)\\
+            & = 1.002 - 0.501\\
+            & = 0.501
+        \end{align}
+    \end{enumerate}
+  
+\end{document}
