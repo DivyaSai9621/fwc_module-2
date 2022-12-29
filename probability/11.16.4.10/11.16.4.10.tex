@@ -1,0 +1,50 @@
+%\documentclass[class=article, crop=false]{standalone}
+\documentclass{article}
+\usepackage{amssymb,amsfonts,amsthm,amsmath}
+\usepackage{enumitem}
+\usepackage{hyperref,xcolor}
+\hypersetup{
+    colorlinks,
+    urlcolor={black}  %black!50!blue
+}
+
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+%\newcommand{\varsol}{\noindent \textbf{Aliter: }}
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\setlist[enumerate]{font=\small\bfseries}
+\renewcommand\thefootnote{\textcolor{black}{\arabic{footnote}}}
+
+\begin{document}
+
+\title{PROBABILITY}
+\author{\Large DIVYA SAI - FWC22094}
+\date{}
+
+\maketitle
+\begin{enumerate}[label=16.\arabic{enumi}.\arabic{enumii}]%,ref=\thesection.\theenumi.\theenumi]
+\numberwithin{equation}{enumi}
+\setcounter{enumi}{3}
+\setcounter{enumii}{10}
+
+\item \footnote{Read question numbers as (CHAPTER NUMBER).(EXERCISE NUMBER).(QUESTION NUMBER)}\textbf {The number lock of a suitcase has 4 wheels each labelled with ten digits i.e. from 0 to 9.The lock opens with a sequence of four digits with no repeats.What is the probability of a person getting the right sequence to open the suitcase?}\\[1ex]
+
+\textbf{Solution:}
+
+Let,the wheels be $X =\cbrak{0,1,2,3}$ and the digits be $Y=\cbrak{0,1,2...9}$.
+Possible placement of digits are,
+\begin{align}
+\perm{10}{4}=\frac{10!}{(10-4)!}=\frac{10!}{6!}=\frac{10 \times 9 \times 8 \times 7 \times	 6!}{6!}=5040
+\end{align}
+Let A be the event the correct sequence is selected So,n(A)=1.
+
+Probability of correct sequence is selected as P(A),
+\begin{align}
+P(A)=\frac{n(A)}{n(s)}=\frac{1}{5040}
+\end{align}
+The probability of getting the right sequence to open the suitcase is 
+\boxed{\frac{1}{5040}}
+\end{enumerate}
+\end{document}
