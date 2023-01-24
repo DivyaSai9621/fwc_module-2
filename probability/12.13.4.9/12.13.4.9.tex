@@ -1,0 +1,95 @@
+%\documentclass[class=article, crop=false]{standalone}
+\documentclass{article}
+\usepackage{amssymb,amsfonts,amsthm,amsmath}
+\usepackage{enumitem}
+\usepackage{hyperref,xcolor}
+\hypersetup{
+    colorlinks,
+    urlcolor={black}  %black!50!blue
+}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+%\newcommand{\varsol}{\noindent \textbf{Aliter: }}
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+%\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\setlist[enumerate]{font=\small\bfseries}
+\renewcommand\thefootnote{\textcolor{black}{\arabic{footnote}}}
+
+\begin{document}
+
+\title{PROBABILITY}
+\author{\Large DIVYA SAI - FWC22094}
+\date{}
+
+\maketitle
+\begin{enumerate}
+[label=16.\arabic{enumi}.\arabic{enumii}]%,ref=\thesection.\theenumi.\theenumi]
+\numberwithin{equation}{enumi}
+\setcounter{enumi}{3}
+\setcounter{enumii}{10}
+
+\item \footnote{Read question numbers as (CHAPTER NUMBER).(EXERCISE NUMBER).(QUESTION NUMBER)} {The random variable $X$ has a probability distribution \pr{X} of the following form.Where $k$ is some number: }
+\begin{align}
+  \pr{X} =
+    \begin{cases}
+      k,  & \text{x=0}\\
+      2k, & \text{x=1}\\
+      3k, & \text{x=2}\\
+      0 , & \text{otherwise}
+    \end{cases}       
+\end{align}
+
+a) Determine the value of $k$ 
+
+b) Find \pr{X < 2},\pr{X \leq 2},\pr{X \geq 2}  
+
+
+\solution\\
+we know that,
+Sum of Probabilities = 1.
+\begin{align}
+&k + 2k + 3k  = 1 &\\
+&6k = 1 &\\
+&k = \frac{1}{6}&
+\end{align}
+Using CDF,
+\begin{align}
+  F_X(k) =
+    \begin{cases}
+      0,  & \text{ x$<$0}\\
+      \frac{1}{6}, & \text{ 0 $\leq$ x $<$ 1}\\
+      \frac{1}{2}, & \text{ 1 $\leq$ x $<$ 2}\\
+      1 , & \text{ x $\geq$ 2}
+    \end{cases}       
+\end{align}
+
+ \begin{enumerate}
+        \item \pr{X < 2}
+           \begin{align}
+              \pr{0 < X \le 1} 
+              & = F(1)\\
+              & = \frac{1}{2}
+        \end{align}
+\end{enumerate}
+\begin{enumerate}
+        \item \pr{X \leq 2}
+        \begin{align}
+            \pr{X \le 2}
+            & = F(2)\\
+            & = 1   
+        \end{align}
+\end{enumerate}
+\begin{enumerate}
+        \item \pr{X \geq 2}
+        \begin{align}
+             \pr{X \geq 2}
+               & = 1-\pr{X < 2} \\
+               & = 1 - F(1)\\
+               & = 1 - \frac{1}{2}\\
+               & = \frac{1}{2}
+        \end{align}
+    \end{enumerate}
+\end{enumerate}
+\end{document}
